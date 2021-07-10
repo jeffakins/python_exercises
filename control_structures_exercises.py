@@ -50,3 +50,40 @@ i = 5
 while i <= 15:
     print(i)
     i += 1
+
+
+#   - Create a while loop that will count by 2's starting with 0 and ending at 100. 
+#     Follow each number with a new line.
+i = 0
+while i <= 100:
+    print(i)
+    i += 2
+#   - Alter your loop to count backwards by 5's from 100 to -10.
+i = 100
+while i >= -10:
+    print(i)
+    i -= 5
+#   - Create a while loop that starts at 2, 
+#     and displays the number squared on each line while the number is less than 1,000,000. 
+i = 2
+while i <= 100000:
+    print(i)
+    i = i ** 2
+
+#   - From 100 subtract by 5 until 0
+i = 100
+while i >= 0:
+    print(i)
+    i -= 5
+
+
+
+# For Loops
+
+# - Write some code that prompts the user for a number, 
+#   then shows a multiplication table up through 10 for that number.
+print("Enter a number to show its multiplication table")
+number = int(input())
+for i in range(1, 11):
+    print(number, "x", i, "=", number * i)
+
