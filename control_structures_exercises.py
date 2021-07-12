@@ -197,3 +197,19 @@ while i <= 100:
 # 4. Display a table of powers.
 
 #    Prompt the user to enter an integer.
+#    Display a table of squares and cubes from 1 to the value entered.
+#    Ask if the user wants to continue.
+#    Assume that the user will enter valid data.
+#    Only continue if the user agrees to.
+
+print("Enter a number to be sqaured and cubed")
+number = input()
+def square(x):
+    return x * x
+def cube(x):
+    return x * x * x
+
+print("Here is your table")
+print("number", "squared", "cubed")
+for i in range(1, number):
+    print(number, square(number), cube(number))
