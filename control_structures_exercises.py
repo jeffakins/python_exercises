@@ -256,7 +256,9 @@ while go_again != "n" or go_again != "N":
     print("Would you like to enter another grade?")
     print('(Press "n" to quit, or any other key to go again)')
     go_again = input() # for some reason this is not breaking out of the while loop
-    print(go_again) # test to see if it is accepting the input
+    if go_again == "n" or go_again == "N":
+        break
+    #print(go_again) # test to see if it is accepting the input
 print("Thanks for playing!")
 
 
@@ -267,3 +269,11 @@ print("Thanks for playing!")
 
 #       a. Prompt the user to enter a genre, then loop through your books list and print out 
 #          the titles of all the books in that genre.
+
+my_library = [
+    {
+        "Title": "Man's Search for Meaning",
+        "Author": "Joshua Foer"
+        "Genre": ""
+    }
+]
