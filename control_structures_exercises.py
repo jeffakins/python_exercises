@@ -26,16 +26,18 @@ print("The day of the week is", day_of_week)
 # c. create variables and make up values for
 #       - the number of hours worked in one week
 weekly_work_hours = 40
+weekly_paycheck = 2000
 #       - the hourly rate
-hourly_rate = pay / pay_period_hours
+hourly_rate = weekly_paycheck / weekly_work_hours
 #       - how much the week's paycheck will be
 weekly_paycheck = hourly_rate * weekly_work_hours
 #       - write the python code that calculates the weekly paycheck. 
 weekly_paycheck = hourly_rate * weekly_work_hours
 #         You get paid time and a half if you work more than 40 hours
+overtime_hours = weekly_work_hours - 40
 if weekly_work_hours > 40:
     overtime_pay = overtime_hours * (hourly_rate * 1.5)
-    return overtime_pay
+
 
 
 # 2. Loop Basics
@@ -201,15 +203,32 @@ while i <= 100:
 #    Ask if the user wants to continue.
 #    Assume that the user will enter valid data.
 #    Only continue if the user agrees to.
+#    Bonus: Research python's format string specifiers to align the table
 
 print("Enter a number to be sqaured and cubed")
 number = input()
-def square(x):
+def square(x): # function to square the number
     return x * x
-def cube(x):
+def cube(x): # function to cube the number
     return x * x * x
 
-print("Here is your table")
-print("number", "squared", "cubed")
-for i in range(1, number):
-    print(number, square(number), cube(number))
+print("Here is your table") # Print results
+print(f"number | squared | cubed")
+print(f"------ | ------- | ----- |")
+for i in range(1, int(number) + 1):
+    print(f"{i:<8} {square(i):<8} {cube(i):<8}")
+
+
+# 5. Convert given number grades into letter grades.
+
+#   Prompt the user for a numerical grade from 0 to 100.
+#   Display the corresponding letter grade.
+#   Prompt the user to continue.
+#   Assume that the user will enter valid integers for the grades.
+#   The application should only continue if the user agrees to.
+#   Grade Ranges:
+#       A : 100 - 88
+#       B : 87 - 80
+#       C : 79 - 67
+#       D : 66 - 60
+#       F : 59 - 0
