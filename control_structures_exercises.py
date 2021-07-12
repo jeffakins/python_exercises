@@ -232,3 +232,38 @@ for i in range(1, int(number) + 1):
 #       C : 79 - 67
 #       D : 66 - 60
 #       F : 59 - 0
+
+
+go_again = "yes"
+
+while go_again != "n" or go_again != "N":
+    print("What was your numerical grade (from 0 - 100)?")
+    grade = int(input())
+
+    if grade >= 88 and grade <= 100:
+        print("Congrats, your grade is an A! \n")
+    elif grade >= 80 and grade <= 87:
+        print("Nice work, your grade is a B! \n")
+    elif grade >= 67 and grade <= 79:
+        print("You got a C, and that's a passing grade. \n")
+    elif grade >= 60 and grade <= 66:
+        print("Needs some work, you got a D. \n")
+    elif grade >= 0 and grade <= 59:
+        print("Your grade is an F, you did not pass. \n")
+    else:
+        print("That is not a valid grade \n")
+
+    print("Would you like to enter another grade?")
+    print('(Press "n" to quit, or any other key to go again)')
+    go_again = input() # for some reason this is not breaking out of the while loop
+    print(go_again) # test to see if it is accepting the input
+print("Thanks for playing!")
+
+
+
+# 6. Create a list of dictionaries where each dictionary represents a book that you have read. 
+#    Each dictionary in the list should have the keys title, author, and genre. 
+#    Loop through the list and print out information about each book.
+
+#       a. Prompt the user to enter a genre, then loop through your books list and print out 
+#          the titles of all the books in that genre.
