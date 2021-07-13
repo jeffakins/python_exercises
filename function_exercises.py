@@ -189,3 +189,10 @@ def normalize_name(input_str):
 
 # Test 10. 
 normalize_name("1 2 3 $()&^$( T#%^H#%^i%^s%^ i%^&S %&(*(a v$%&AlI#%^d p#%^YTh#%^on id#%^%&en$%&TI#$^%%$&^*Fi@$%^*(er  #^#^#@")
+
+
+
+# 11. Write a function named cumulative_sum that accepts a list of numbers 
+#     and returns a list that is the cumulative sum of the numbers in the list.
+#       - cumulative_sum([1, 1, 1]) returns [1, 2, 3]
+#       - cumulative_sum([1, 2, 3, 4]) returns [1, 3, 6, 10]
