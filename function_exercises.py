@@ -89,3 +89,103 @@ print("Now enter tip percentage in decimal form:")
 tip_percentage = input()
 print("Tip amount:")
 print("$", calculate_tip(bill_total, tip_percentage))
+
+
+# 6. Define a function named apply_discount. 
+#    It should accept a original price, and a discount percentage, 
+#    and return the price after the discount is applied.
+
+def apply_discount(original_price, discount_percent):
+    """A function that will apply a discount to the price of an item"""
+    discount = float(original_price) * float(discount_percent)
+    discount_price = float(original_price) - discount
+    return round(discount_price, 2)
+
+# Testing that the above funtion works
+print("To calculate the price of your item after applying a discount first,")
+print("enter the price of your item:")
+original_price = input()
+print("Now enter the discount percentage in decimal form:")
+discount_percent = input()
+print("Discounted price:")
+print("$", apply_discount(original_price, discount_percent))
+
+
+
+# 7. Define a function named handle_commas. 
+#    It should accept a string that is a number that contains commas 
+#    in it as input, and return a number as output. 
+
+def handle_commas(number):
+    num_no_comma = number.replace(",", "")
+    return float(num_no_comma)
+
+# Testing the above function
+print(handle_commas("3,254"))
+print(handle_commas("3,254,123,456"))
+
+
+
+# 8. Define a function named get_letter_grade. 
+#    It should accept a number and return the letter grade associated with that number (A-F).
+
+def get_letter_grade(numeric_grade):
+    numeric_grade = int(numeric_grade)
+    if numeric_grade >= 0 and numeric_grade <= 59:
+        return "F"
+    elif numeric_grade >= 60 and numeric_grade <= 69:
+        return "D"
+    elif numeric_grade >= 70 and numeric_grade <= 79:
+        return "C"
+    elif numeric_grade >= 80 and numeric_grade <= 89:
+        return "B"
+    elif numeric_grade >= 90 and numeric_grade <= 100:
+        return "A"
+    else:
+        return "Not valid"
+
+
+# Test above
+print(get_letter_grade(55))
+print(get_letter_grade(85))
+print(get_letter_grade(95))
+print(get_letter_grade(155))
+
+
+
+# 9. Define a function named remove_vowels
+#    that accepts a string and returns a string with all the vowels removed.
+
+def remove_vowels(word):
+    word = word.replace("a", "")
+    word = word.replace("e", "")
+    word = word.replace("i", "")
+    word = word.replace("o", "")
+    word = word.replace("u", "")
+    return word
+
+# Test above
+print(remove_vowels("This is a test"))
+print(remove_vowels("Yo aeiou ya"))
+print(remove_vowels("Let's try this one more time"))
+
+
+# 10. Define a function named normalize_name. 
+#     It should accept a string and return a valid python identifier, that is:
+#       - anything that is not a valid python identifier should be removed
+#       - leading and trailing whitespace should be removed
+#       - everything should be lowercase
+#       - spaces should be replaced with underscores
+
+def normalize_name(input_str):
+    norm_str = ""
+    for char in input_str:
+        if char.isdigit() or char.isalpha() or char == "_" or char == " ":
+            norm_str += char 
+    norm_str = norm_str.strip()
+    norm_str = norm_str.replace(" ", "_")
+    norm_str = norm_str.lower()
+    return norm_str
+
+# Test 10. 
+normalize_name("1 2 3 $()&^$( T#%^H#%^i%^s%^ i%^&S %&(*(a v$%&AlI#%^d p#%^YTh#%^on id#%^%&en$%&TI#$^%%$&^*Fi@$%^*(er  #^#^#@")
