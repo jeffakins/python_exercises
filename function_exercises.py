@@ -20,4 +20,15 @@ print(is_two(4))
 
 def is_vowel(letter):
     vowels = ["a", "e", "i", "o", "u"]
-    
+    for letter in vowels:
+        if letter.lower() == vowels:
+            return True
+        else:
+            return False
+
+print("Input a vowel")
+letter = input()
+if is_vowel() == True:
+    print("That is a vowel")
+else:
+    print("Not a vowel")
