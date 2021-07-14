@@ -52,14 +52,68 @@ print(list(permutations('ABCD', 2)))
 #    (right click -> save file as...). 
 #    Use the load function from the json module to open this file.
 
-import json
+import json # Initialization
 
 profiles = list(json.load(open('profiles.json'))) 
-#print(profiles[0])
 
-#   Total number of users
+#   a. Total number of users
+print("Number of users:")
 print(len(profiles)) # Total number of users is 19
 
-#   Number of active users
-for profile in profiles:
-    if profile
+#   b. Number of active users
+def number_active_users():
+    i = 0
+    for profile in profiles:
+        if profile["isActive"] == True:
+            i += 1
+    return i
+
+print("Number of active users:")
+print(number_active_users())
+
+#   c. Number of inactive users
+
+def number_inactive_users():
+    i = 0
+    for profile in profiles:
+        if profile["isActive"] == False:
+            i += 1
+    return i
+
+print("Number of inactive users:")
+print(number_inactive_users())
+
+#   d. Grand total of balances for all users
+
+def sum_balances():
+    total = 0 # initialize total
+    for profile in profiles:
+        # print("User balance:", profile["balance"]) # Used to check balances if needed
+        temp_balance = profile["balance"] # created a variable to modify and keep things straight in my head
+        remove_comma_balance = temp_balance.replace(",", "") # removes commas from the string
+        remove_dollar_sign_balance = remove_comma_balance.replace("$", "") #Removes $ from the string
+        total += float(remove_dollar_sign_balance) # Adds all balances in list
+    return total
+
+print("Total balances for all users:")
+print("$", sum_balances())
+
+#   e. Average balance per user
+
+def avg_balance():
+    i = 0
+    total = 0 # initialize total
+    for profile in profiles:
+        # print("User balance:", profile["balance"]) # Used to check balances if needed
+        temp_balance = profile["balance"] # created a variable to modify and keep things straight in my head
+        remove_comma_balance = temp_balance.replace(",", "") # removes commas from the string
+        remove_dollar_sign_balance = remove_comma_balance.replace("$", "") #Removes $ from the string
+        total += float(remove_dollar_sign_balance) # Adds all balances in list
+        i += 1 # 19 balances
+    #print("len(profiles:", len(profiles)) # Test to see if lenth == i
+    #print("Total:", total) # Test for total
+    #print("i:", i ) # Test for i
+    return round(total / i, 2)
+
+print("Average balance for all users:")
+print("$", avg_balance())
