@@ -154,15 +154,15 @@ def favorite_fruit():
     highest_fruit = ""                                      # Initializing str variable
     highest_count = 0                                       # Initializing int variable
     for profile in profiles:                                # Iterating through the list
-        fruit_counter = profile["favoriteFruit"]            # Variable to compare the below nested loop
+        fruit_comparer = profile["favoriteFruit"]            # Variable to compare the below nested loop
         fruit_count = 0                                     # Initializing int variable
         for compare in profiles:                            # Nested loop to compare and count like fruit
-            if fruit_counter == compare["favoriteFruit"]:   # compare variables
+            if fruit_comparer == compare["favoriteFruit"]:   # compare variables
                 fruit_count += 1                            # Count like fruit
         if fruit_count > highest_count:                     # if statement to compare total amounts of fruits
             highest_count = fruit_count                     # Stores number of fruit
-            highest_fruit = fruit_counter                   # Stores name of fruit
-    return highest_fruit                                    # Returns most common fruit
+            highest_fruit = fruit_comparer                  # Stores name of fruit
+    return highest_fruit                                    # Returns name of most common fruit
 
 print("Most common favorite fruit")
 print(favorite_fruit())                                     # Strawberry is the most common favorite fruit
@@ -170,21 +170,21 @@ print(favorite_fruit())                                     # Strawberry is the 
 #   i. Least most common favorite fruit
 
 def least_favorite_fruit():
-    highest_fruit = ""
-    highest_count = 0
-    for profile in profiles:
-        fruit_counter = profile["favoriteFruit"]
-        fruit_count = 0
-        for compare in profiles:
-            if fruit_counter == compare["favoriteFruit"]:
-                fruit_count += 1
-        if fruit_count > highest_count:
-            highest_count = fruit_count
-            highest_fruit = fruit_counter
-    return highest_fruit
+    least_fruit = ""                                        # Initializing str variable
+    least_count = 1000000                                   # Initializing int variable
+    for profile in profiles:                                # Loop through the list
+        fruit_comparer = profile["favoriteFruit"]           # Stores fruit from each item in list to a variable
+        fruit_count = 0                                     # Initializing counter before entering nested loop
+        for compare in profiles:                            # Nested loop to count similar fruits
+            if fruit_comparer == compare["favoriteFruit"]:  # Comparing fruit names
+                fruit_count += 1                            # Counting similar names
+        if fruit_count < least_count:                       # Comparing totals
+            least_count = fruit_count                       # Storing the lesser amount of fruits
+            least_fruit = fruit_comparer                    # Storing name of lesser amount of fruits
+    return least_fruit                                      # Returns least common fruit
 
-print("Most common favorite fruit")
-print(least_favorite_fruit())
+print("Least common favorite fruit")
+print(least_favorite_fruit())                               # Apple is the least common favorite fruit
 
 #   j. Total number of unread messages for all users
 
