@@ -194,5 +194,16 @@ def normalize_name(input_str):
 
 # 11. Write a function named cumulative_sum that accepts a list of numbers 
 #     and returns a list that is the cumulative sum of the numbers in the list.
+
+def cumulative_sum(list_to_sum):
+    i = 0
+    list_summed = []
+    for number in list_to_sum:
+        number += number
+        list_summed[i] = number
+        i += 1
+    return list_summed
+
 #       - cumulative_sum([1, 1, 1]) returns [1, 2, 3]
+print(cumulative_sum([1, 1, 1]))
 #       - cumulative_sum([1, 2, 3, 4]) returns [1, 3, 6, 10]
