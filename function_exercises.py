@@ -195,15 +195,15 @@ def normalize_name(input_str):
 # 11. Write a function named cumulative_sum that accepts a list of numbers 
 #     and returns a list that is the cumulative sum of the numbers in the list.
 
-def cumulative_sum(list_to_sum):
-    i = 0
-    list_summed = []
-    for number in list_to_sum:
-        number += number
-        list_summed[i] = number
-        i += 1
-    return list_summed
+def cumulative_sum(list_to_sum):            # Function to cumulatively sum and return a list
+    sum_number = 0                          # Initialize a variable to hold the sums
+    list_summed = []                        # Initialize the list that will hold the sums
+    for number in list_to_sum:              # Loop through the list to be summed
+        sum_number += number                # Adding the numbers in the list
+        list_summed.append(sum_number)      # Then adding the summed number to the new list
+    return list_summed                      # Returning the summed list
 
 #       - cumulative_sum([1, 1, 1]) returns [1, 2, 3]
-print(cumulative_sum([1, 1, 1]))
+print(cumulative_sum([1, 1, 1]))            # Returned: [1, 2, 3] 
 #       - cumulative_sum([1, 2, 3, 4]) returns [1, 3, 6, 10]
+print(cumulative_sum([1, 2, 3, 4]))         # Returned: [1, 2, 3]
