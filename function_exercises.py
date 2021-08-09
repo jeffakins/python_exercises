@@ -81,6 +81,8 @@ def calculate_tip(bill_total, tip_percentage):
     """A function to calculate a tip"""
     return round(float(bill_total) * float(tip_percentage), 2)
 
+print(calculate_tip(34.40, .2))
+
 # Testing that the above funtion works
 # print("To calculate tip amount first,")
 # print("enter your bill total:")
